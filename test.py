@@ -21,8 +21,10 @@ process = subprocess.Popen(
 
 stdout, stderr = process.communicate(input="".join(inputs))
 
-with open("tests/actual_output.txt", "w") as actual_output_file:
+with open(f"tests/answer{args.test}.txt", "w") as actual_output_file:
     actual_output_file.write(stdout)
 
-print(stdout)
+print("Input : ", inputs[1].strip())
+print("Output: ", " ".join(result))
+print("Answer: ", stdout)
 print(stderr)
